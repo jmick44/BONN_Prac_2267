@@ -1,0 +1,5 @@
+This machine is managed with Puppet.
+
+My message is: <%= $message %>
+  
+The fqdn of this machine is: <%= $facts[fqdn] %>

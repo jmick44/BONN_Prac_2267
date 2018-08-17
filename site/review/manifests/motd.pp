@@ -1,0 +1,12 @@
+class review::motd (
+  $message = 'Shutting down in 10 seconds.....',
+){
+
+   file { '/etc/motd':
+      ensure  => file,
+      owner   =>  'root',
+      group   => 'root',
+      mode    => '0644',
+      content => epp('review/motd.epp', {message => $message,}),
+   }
+}
